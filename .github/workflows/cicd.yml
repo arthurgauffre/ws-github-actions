@@ -22,9 +22,9 @@ jobs:
 
             - name: report banana result
               run: |
-                NB_ERRORS=$(cat coding_style_reports.log | wc -l)
+                NB_ERRORS=$(cat coding-style-reports.log | wc -l)
                 if [ $NB_ERRORS -gt 0 ]; then
-                    ERROR=$(cat coding_style_reports.log)
+                    ERROR=$(cat coding-style-reports.log)
                     echo "::error title=$NB_ERROR errors found::$ERROR"
                     exit 1
                 else
