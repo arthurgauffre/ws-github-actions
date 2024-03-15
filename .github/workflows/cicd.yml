@@ -33,8 +33,6 @@ jobs:
 
     compile:
         runs-on: ubuntu-latest
-        container:
-            image: ghcr.io/epitech/epitest-docker:latest
         steps:
 
             - name: Checkout Git repository
