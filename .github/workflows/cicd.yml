@@ -49,3 +49,22 @@ jobs:
                 else
                     exit 0
                 fi
+
+    run-tests:
+        runs-on: ubuntu-latest
+        container:
+            image: ghcr.io/epitechcontent/epitest-docker:latest
+        needs: [compile, coding-style]
+        steps:
+
+            - name: Checkout Git repository
+              uses: actions/checkout@v4
+
+            - name: compile unit tests
+              run: make compile_tests
+
+            - name: run tests
+              run: ./unit_testing
+            
+            - name: run integration tests
+              run: ./integration_testing
